@@ -8,7 +8,7 @@ function Welcome(props){
     return <h1>Hello, {props.name} </h1>
 }
 ```
-2. 使用ES6 class定义一个组件
+2. 使用ES6 class 定义一个组件
 ```js
 class Welcome extends React.Component{
     render(){
