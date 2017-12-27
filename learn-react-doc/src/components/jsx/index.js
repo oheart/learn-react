@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+// 在JSX中使用表达式
 class JSX extends Component{
     render(){
         const user = {
