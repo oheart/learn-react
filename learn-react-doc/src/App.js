@@ -4,6 +4,7 @@ import JSX from './components/jsx'
 import Part from './components/part'
 import State from './components/state'
 import Event from './components/event'
+import Render from './components/render'
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
           <Part />
           <State />
           <Event />
+          <Render />
       </div>
     );
   }
