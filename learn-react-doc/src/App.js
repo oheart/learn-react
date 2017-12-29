@@ -5,6 +5,8 @@ import Part from './components/part'
 import State from './components/state'
 import Event from './components/event'
 import Render from './components/render'
+import List from './components/list'
+import Form from './components/Form'
 
 class App extends Component {
   render() {
@@ -15,6 +17,8 @@ class App extends Component {
           <State />
           <Event />
           <Render />
+          <List />
+          <Form />
       </div>
     );
   }
