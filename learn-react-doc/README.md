@@ -6,3 +6,6 @@
 5. [条件渲染](books/条件渲染.md)
 6. [列表&keys](books/列表&keys.md)
 7. [表单](books/表单.md)
+8. [状态提升](books/状态提升.md)   
+9. [组合VS继承](books/组合VS继承.md)
+10. [React理念](books/React理念.md)

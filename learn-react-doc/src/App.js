@@ -7,6 +7,8 @@ import Event from './components/event'
 import Render from './components/render'
 import List from './components/list'
 import Form from './components/Form'
+import StatusImprove from './components/statusImprove'
+import Combination from './components/combination'
 
 class App extends Component {
   render() {
@@ -19,6 +21,8 @@ class App extends Component {
           <Render />
           <List />
           <Form />
+          <StatusImprove />
+          <Combination />
       </div>
     );
   }
