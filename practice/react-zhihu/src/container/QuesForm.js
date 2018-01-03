@@ -12,11 +12,18 @@ class QuesForm extends Component{
     submitQuesForm(e){
         //阻止表单默认提交
         e.preventDefault();
+        
+        const titVal = this.state.titVal;
+        const descVal = this.state.descVal;
+
+        //如果标题且描述为空时不进行提交操作
+        if(!titVal && !descVal) return;
+
         //调用父组件的添加问题方法
         this.props.addQues({
             id: Utils.generateID(),
-            title: this.state.titVal,
-            desc: this.state.descVal,
+            title: titVal,
+            desc: descVal,
             voteCount: 0
         });
         // 提交表单后重置表单
