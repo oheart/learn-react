@@ -1,0 +1,16 @@
+/* common css */
+input{
+  outline: none;
+}
+.cursor{
+  cursor: pointer;
+}
+/* app css */
+.App {
+  text-align: center;
+  padding: 20px 0;
+}
+.del-todo-btn{
+  margin-left: 10px;
+}
+

@@ -5,7 +5,7 @@
 巩固react相关基础知识
 
 ## 项目运行
-- npm i
+- npm install
 - npm start
 
 
