@@ -5,7 +5,7 @@
 - npm install
 - npm start
 
-## 步骤
+## 撤销和重做功能步骤
 1. npm install --save redux-undo   &emsp;&emsp;//&nbsp;&nbsp;安装redux-undo
 2. 封装 Reducer       &emsp;&emsp;//&nbsp;&nbsp;通过 undoable函数强化reducer, 把计算结果导出
 ```js
