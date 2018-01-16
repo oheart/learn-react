@@ -16,4 +16,7 @@ component --> dispatch(action) --> reducer --> subscribe --> getState --> compon
 
 用了react-redux之后流程是这样的 (本例中)：    
 
-component --> actionCreator(data) --> reducer --> component
+component --> actionCreator(data) --> reducer --> component  
+
+
+store的三大功能：dispatch，subscribe，getState都不需要手动来写了。react-redux帮我们做了这些，同时它提供了两个好基友Provider和connect。
