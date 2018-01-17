@@ -14,8 +14,14 @@
 ## redux-simple-demo
 - [redux-simple-demo](redux-simple-demo/README.md)
 
+## redux-simple-todolist
+- [redux-simple-demo](redux-simple-todolist/README.md)
+
 ## react-redux-todolist
 - [react-redux-todolist](react-redux-todolist/README.md)
+
+## redux-weather
+- [redux-weather](redux-weather/README.md)
 
 
 
