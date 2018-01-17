@@ -7,7 +7,7 @@
 [react-todolist](react-todolist/README.md)
 
 ## 知乎问答
-这是一个模仿知乎界面的简单React demo，用react实现。 
+这是一个模仿知乎界面的简单React demo，用react实现。   
 [知乎问答](react-zhihu/README.md)
 
 ## react-router4-demo
