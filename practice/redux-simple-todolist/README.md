@@ -1,5 +1,6 @@
 ## redux-simple-todolist
-简单的todolist，用react、redux实现。
+简单的todolist，用react、redux实现，，也体现了redux的整个流程。
+
 
 ## 目的
 巩固react/redux知识
