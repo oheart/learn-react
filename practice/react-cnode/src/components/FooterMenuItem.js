@@ -6,7 +6,6 @@ class FooterMenuItem extends Component{
         return index === this.props.currentIndex ? 'cnode-footer-options sel-footer-options' : 'cnode-footer-options'
     }
     clickFooterMenus(topicName, index){
-        console.log('haha')
         const {dispatch_toggleMenu, setCurrentIndex} = this.props;
         setCurrentIndex(index)
         dispatch_toggleMenu(topicName)

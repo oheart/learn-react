@@ -1,7 +1,7 @@
 import Fetch from '../utils/fetch'
 
-Fetch.getRequest("https://phodal.github.io/growth-api-gitbook/api.json", null, (data) => {
-    console.log(data);
+Fetch.getRequest("https://phodal.github.io/growth-api-gitbook/api.json", null, (res) => {
+    console.log(res);
 },(error) =>{
     console.log(error)
 });
@@ -16,9 +16,9 @@ export function updateTopics(topics){
 
 export function req_getTopics(sort){
     return function(dispatch){
-        return Fetch.getRequest("/api/v1/topics", {tab: sort, limit: 10}, (data) => {
-            console.log(data);
-            dispatch(updateTopics(data))
+        return Fetch.getRequest("/api/v1/topics", {tab: sort, limit: 10}, (res) => {
+            console.log(res.data);
+            dispatch(updateTopics(res.data))
         },(error) =>{
             console.log(error)
         });   

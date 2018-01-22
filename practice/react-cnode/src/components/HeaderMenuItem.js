@@ -1,14 +1,7 @@
 import React, {Component} from 'react'
 
+
 class HeaderMenuItem extends Component{
-    componentDidMount(){
-        const {dispatch_toggleMenu, dispatch_getTopics, topicName} = this.props;
-        switch(topicName){
-            case '全部': 
-            dispatch_getTopics('')
-            break;
-        }
-    }
     switchActiveMenu(index){
         return index === this.props.currentIndex ? 'sel-nav' : ''
     }
@@ -31,7 +24,7 @@ class HeaderMenuItem extends Component{
                 break;
             case '招聘':
                 dispatch_getTopics('job')
-            break;
+                break;
         }
        
     }
