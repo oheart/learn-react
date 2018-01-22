@@ -1,0 +1,106 @@
+.cnode-common-header {
+  color: #FFF;
+  background: #80bd01;
+  font-size: 1.6rem;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+}
+.cnode-common-header .cnode-nav-list {
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  padding: 10px 3px;
+}
+.cnode-common-header .cnode-nav-list .cnode-nav-item {
+  flex: 1;
+  text-align: center;
+}
+.cnode-common-header .cnode-nav-list .cnode-nav-item:not(:last-child) {
+  border-right: 1px solid #618F00;
+}
+.cnode-common-header .cnode-nav-list .cnode-nav-item .sel-nav {
+  background: #5e8a01;
+  border-radius: 4px;
+  width: 80%;
+  display: inline-block;
+  padding: 4px 0;
+}
+.common-cnode-footer {
+  color: #FFF;
+  background: #80bd01;
+  font-size: 1.6rem;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+}
+.common-cnode-footer .cnode-footer-sortlist {
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+}
+.common-cnode-footer .cnode-footer-sortlist .cnode-footer-options {
+  flex: 1;
+  padding: 6px 0;
+  text-align: center;
+}
+.common-cnode-footer .cnode-footer-sortlist .cnode-footer-options .iconfont {
+  font-size: 2rem;
+}
+.common-cnode-footer .cnode-footer-sortlist .cnode-footer-options .bottom-footer-icon {
+  height: 4px;
+  display: block;
+}
+.common-cnode-footer .cnode-footer-sortlist .cnode-footer-options .home-page-icon {
+  font-size: 1.6rem;
+}
+.common-cnode-footer .cnode-footer-sortlist .cnode-footer-options .msg-icon {
+  font-size: 1.8rem;
+}
+.common-cnode-footer .cnode-footer-sortlist .sel-footer-options {
+  background: #87c701;
+}
+/* 主题首页 */
+.cnode-topics-list {
+  margin-top: 70px;
+}
+.cnode-topics-list .cnode-topics-item {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 10px;
+  font-size: 1.2rem;
+}
+.cnode-topics-list .cnode-topics-item .topic-item-hd {
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.cnode-topics-list .cnode-topics-item .topic-item-hd .topic-tit-btn {
+  padding: 2px 4px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+.cnode-topics-list .cnode-topics-item .topic-item-hd .topic-desc-tit {
+  font-size: 1.4rem;
+}
+.cnode-topics-list .cnode-topics-item .topic-item-bd {
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+}
+.cnode-topics-list .cnode-topics-item .topic-item-bd .topic-user-info {
+  display: flex;
+  display: -webkit-flex;
+  flex: 1;
+  align-items: center;
+}
+.cnode-topics-list .cnode-topics-item .topic-item-bd .topic-user-info .topic-avatar {
+  height: 38px;
+  border-radius: 19px;
+  margin-right: 6px;
+}

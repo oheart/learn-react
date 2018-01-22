@@ -13,12 +13,14 @@ module.exports = {
             'babel-polyfill',
              path.resolve(entryPath, 'index.js')
         ],
-        vendor:['react','react-dom']
+        vendor:['react','react-dom','redux','react-redux']
     },    
     plugins:[
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            title: 'react-cnode',         
+            title: 'react-cnode',     //根据模板插入css/js等生成最终HTML
+            filename: './index.html', //生成的html存放路径，相对于 path
+            template: './src/template/index.html', //html模板路径        
             showErrors: true
         })
     ],
@@ -30,14 +32,45 @@ module.exports = {
     module:{
         rules:[
             {
-                test: /\.js$/,
+                test: /\.(js|es|es6|jsx)$/,
                 exclude: /node_modules/,
-                loader: "babel-loader",
-                query:{
-                    presets: ['react'],
-                    compact: 'false',
-                    plugins:['syntax-dynamic-import']
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                      presets: [
+                          ['react'],
+                          ['stage-2']
+                      ],
+                      plugins: ['transform-object-rest-spread','transform-es2015-destructuring']
+                    }
                 }
+            },
+            {
+                test: /\.css$/,
+                use:[
+                    'style-loader',
+                    'css-loader'
+                ]
+            },
+            {
+                test: /\.less$/,
+                use:[
+                    {
+                        loader: "style-loader"  //creates style nodes from JS strings
+                    },
+                    {
+                        loader: "css-loader"    //translates CSS into CommonJS
+                    },
+                    {
+                        loader: "less-loader"   //compiles Less to CSS
+                    }
+                ]
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
+                use:[
+                    'file-loader'
+                ]
             }
         ]
     },
