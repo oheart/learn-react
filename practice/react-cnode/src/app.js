@@ -12,7 +12,7 @@ import './static/Iconfont/iconfont.css'
 class App extends Component{
     render(){
         return (
-            <div>
+            <div className="cnode-content-wrapper">
                 <Header />
                 <TopicsList />
                 <Footer />

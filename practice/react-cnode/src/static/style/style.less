@@ -2,36 +2,42 @@
 @style-bg: #eee;
 @style-main : #80bd01;
 @style-color: #2c3e50;
+#root{
+    height:100%;
+}
+.cnode-content-wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
 // 头部
 .cnode-common-header {
     color: #FFF;
     background: #80bd01;
     font-size: 1.6rem;
     width: 100%;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 999;
-    .cnode-nav-list {
-        display: flex;
-        display: -webkit-flex;
-        align-items: center;
-        padding: 10px 3px;
-        .cnode-nav-item {
-            flex: 1;
-            text-align: center;
-            &:not(:last-child) {
-                border-right: 1px solid #618F00;
-            }
-            .sel-nav {
-                background: #5e8a01;
-                border-radius: 4px;
-                width: 80%;
-                display: inline-block;
-                padding: 4px 0;
+   .cnode-nav{
+        .cnode-nav-list {
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+            padding: 10px 3px;
+            .cnode-nav-item {
+                flex: 1;
+                text-align: center;
+                &:not(:last-child) {
+                    border-right: 1px solid #618F00;
+                }
+                .sel-nav {
+                    background: #5e8a01;
+                    border-radius: 4px;
+                    width: 80%;
+                    display: inline-block;
+                    padding: 4px 0;
+                }
             }
         }
-    }
+    }  
 }
 
 //底部
@@ -40,10 +46,6 @@
     background: #80bd01;
     font-size: 1.6rem;
     width: 100%;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    z-index: 999;
     .cnode-footer-sortlist {
         display: flex;
         display: -webkit-flex;
@@ -74,45 +76,56 @@
 
 
 /* 主题首页 */
-
-.cnode-topics-list {
-    margin-top: 70px;
-    .cnode-topics-item {
-        border-bottom: 1px solid #ccc;
-        padding: 10px 10px;
-        font-size: 1.2rem;
-        .topic-item-hd {
-            display: flex;
-            display: -webkit-flex;
-            align-items: center;
-            .topic-tit-btn{
-                padding: 2px 4px;
-                border-radius: 4px;
-                border:1px solid #ccc;
-                margin-right: 10px;
-            }
-            .topic-desc-tit{
-                font-size: 1.4rem;
-            }
-            margin-bottom: 6px;
-        }
-        .topic-item-bd {
-            display: flex;
-            display: -webkit-flex;
-            align-items: center;
-            .topic-user-info{
+.cnode-main-wrapper{
+    display: flex;
+    flex: 1;
+    overflow-y: scroll;
+    width:100%;
+    .cnode-topics-list {
+        width:100%;
+        .cnode-topics-item {
+            width:100%;
+            padding: 10px 10px;
+            box-sizing: border-box;
+            border-bottom: 1px solid #ccc;
+            font-size: 1.2rem;
+            .topic-item-hd {
                 display: flex;
                 display: -webkit-flex;
-                flex: 1;
                 align-items: center;
-                .topic-avatar {
-                    height: 38px;
-                    border-radius: 19px;
-                    margin-right: 6px;
+                .topic-tit-btn{
+                    padding: 2px 4px;
+                    border-radius: 4px;
+                    border:1px solid #ccc;
+                    margin-right: 10px;
                 }
+                .topic-desc-tit{
+                    flex:1;
+                    font-size: 1.4rem;
+                    text-overflow:ellipsis;
+                    white-space:nowrap;
+                    overflow:hidden;
+                }
+                margin-bottom: 6px;
             }
-            .topic-date-info{
-
+            .topic-item-bd {
+                display: flex;
+                display: -webkit-flex;
+                align-items: center;
+                .topic-user-info{
+                    display: flex;
+                    display: -webkit-flex;
+                    flex: 1;
+                    align-items: center;
+                    .topic-avatar {
+                        height: 38px;
+                        border-radius: 19px;
+                        margin-right: 6px;
+                    }
+                }
+                .topic-date-info{
+    
+                }
             }
         }
     }

@@ -14,7 +14,7 @@ class TopicsList extends Component{
         const {topics_redux} = this.props;
         console.log(topics_redux)
         return (
-            <main>
+            <main className="cnode-main-wrapper">
                <div className="cnode-topics-list">
                     {
                         topics_redux.map((topicItem) => 

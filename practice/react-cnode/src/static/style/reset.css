@@ -1,6 +1,6 @@
 @charset "utf-8";
 body,div,h1,h2,h3,h4,h5,h6,p,header,ul,li,dl,dt,dd,ol,nav,input,footer{ margin:0; padding:0;}
-body{ width:100%;color:#000;font-family:Arial, Helvetica, sans-serif;background:#FFF; overflow-x: hidden;}
+body{ width:100%;height:100%;color:#000;font-family:Arial, Helvetica, sans-serif;background:#FFF; overflow-x: hidden;}
 body,button, input, select, textarea {
     font: 10px/1.5 Microsoft Yahei, Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
 }
