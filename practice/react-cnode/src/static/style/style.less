@@ -2,16 +2,25 @@
 @style-bg: #eee;
 @style-main : #80bd01;
 @style-color: #2c3e50;
+
+//根元素
 #root{
     height:100%;
+    .cnode-content-wrapper{
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: column;
+        height: 100%;
+    }
 }
-.cnode-content-wrapper{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+//加载更多
+.load-more-container{
+    text-align:center;
+    padding:10px 0;
 }
-// 头部
-.cnode-common-header {
+
+// 首页头部
+.index-menu-header {
     color: #FFF;
     background: #80bd01;
     font-size: 1.6rem;
@@ -40,7 +49,22 @@
     }  
 }
 
-//底部
+// 公用头部
+.common-cnode-header{
+    width: 100%;
+    font-size: 1.6rem;
+    color: #FFF;
+    background: #80bd01;
+    display: flex;
+    display: -webkit-flex;
+    padding: 10px 10px;
+    .header-txt-part{
+         flex:1;
+         text-align:center;   
+    }
+}
+
+//公用底部
 .common-cnode-footer {
     color: #FFF;
     background: #80bd01;
@@ -67,6 +91,9 @@
             .msg-icon {
                 font-size: 1.8rem;
             }
+            a{
+                color:#FFF;
+            }
         }
         .sel-footer-options{
             background:#87c701;
@@ -75,58 +102,95 @@
 }
 
 
-/* 主题首页 */
+/* 公用主题内容 */
 .cnode-main-wrapper{
     display: flex;
+    display: -webkit-flex;
     flex: 1;
     overflow-y: scroll;
     width:100%;
-    .cnode-topics-list {
+   
+}
+
+/* 首页主题列表 */
+.cnode-topics-list {
+    width:100%;
+    .cnode-topics-item {
         width:100%;
-        .cnode-topics-item {
-            width:100%;
-            padding: 10px 10px;
-            box-sizing: border-box;
-            border-bottom: 1px solid #ccc;
-            font-size: 1.2rem;
-            .topic-item-hd {
-                display: flex;
-                display: -webkit-flex;
-                align-items: center;
-                .topic-tit-btn{
-                    padding: 2px 4px;
-                    border-radius: 4px;
-                    border:1px solid #ccc;
-                    margin-right: 10px;
-                }
-                .topic-desc-tit{
-                    flex:1;
-                    font-size: 1.4rem;
-                    text-overflow:ellipsis;
-                    white-space:nowrap;
-                    overflow:hidden;
-                }
-                margin-bottom: 6px;
+        padding: 10px 10px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #ccc;
+        font-size: 1.2rem;
+        .topic-item-hd {
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+            .topic-tit-btn{
+                padding: 2px 4px;
+                border-radius: 4px;
+                border:1px solid #ccc;
+                margin-right: 10px;
             }
-            .topic-item-bd {
+            .topic-desc-tit{
+                flex:1;
+                font-size: 1.4rem;
+                text-overflow:ellipsis;
+                white-space:nowrap;
+                overflow:hidden;
+            }
+            margin-bottom: 6px;
+        }
+        .topic-item-bd {
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+            .topic-user-info{
                 display: flex;
                 display: -webkit-flex;
+                flex: 1;
                 align-items: center;
-                .topic-user-info{
-                    display: flex;
-                    display: -webkit-flex;
-                    flex: 1;
-                    align-items: center;
-                    .topic-avatar {
-                        height: 38px;
-                        border-radius: 19px;
-                        margin-right: 6px;
-                    }
-                }
-                .topic-date-info{
-    
+                .topic-avatar {
+                    height: 38px;
+                    border-radius: 19px;
+                    margin-right: 6px;
                 }
             }
         }
+    }
+}
+
+// 登录
+.signin-content-box{
+    width:280px;
+    margin: 45% auto 0;
+    font-size: 1.4rem;
+    .access-token-input{
+        width:100%;
+        border-radius: 5px;
+        border: 1px solid #eee;
+        padding: 5px 10px;
+        box-sizing:border-box;
+    }
+    .signin-btn{
+        display: block;
+        width: 100%;
+        padding: 5px 10px;
+        line-height: 28px;
+        border-radius: 5px;
+        text-align: center;
+        color: #fff;
+        background: #80bd01;
+        margin-top:30px;
+    }
+}
+// 未登录提示
+.signin-msg-box{
+    position:absolute;
+    width:100%;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1.6rem;
+    .signin-tip-link{
+        color: #80bd01;
     }
 }

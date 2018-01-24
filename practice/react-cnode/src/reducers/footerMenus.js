@@ -3,22 +3,18 @@ import * as actionTypes from '../actions/actionTypes'
 export const initialFooterMenus = [
     {
         name: '首页',
-        url: 'home',
         isActive: true
     },
     {
         name: '发表',
-        url: 'posted',
         isActive: false
     },
     {
         name: '消息',
-        url: 'msg',
         isActive: false
     },
     {
         name: '我的',
-        url: 'mine',
         isActive: false
     }
 ]

@@ -14,9 +14,9 @@ export function updateTopics(topics){
     }
 }
 
-export function req_getTopics(sort){
+export function req_getTopics(sort, page){
     return function(dispatch){
-        return Fetch.getRequest("/api/v1/topics", {tab: sort, limit: 10}, (res) => {
+        return Fetch.getRequest("/api/v1/topics", {tab: sort, limit: 10, page: page}, (res) => {
             console.log(res.data);
             dispatch(updateTopics(res.data))
         },(error) =>{

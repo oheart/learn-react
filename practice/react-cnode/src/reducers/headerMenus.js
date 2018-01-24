@@ -25,6 +25,11 @@ export const initialHeaderMenus = [
         name: '招聘',
         url: 'job',
         isActive: false
+    },
+    {
+        name: '测试',
+        url: 'test',
+        isActive: false
     }
    
 ]

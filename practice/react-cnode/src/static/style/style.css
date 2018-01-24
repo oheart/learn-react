@@ -1,36 +1,54 @@
 #root {
   height: 100%;
 }
-.cnode-content-wrapper {
+#root .cnode-content-wrapper {
   display: flex;
+  display: -webkit-flex;
   flex-direction: column;
   height: 100%;
 }
-.cnode-common-header {
+.load-more-container {
+  text-align: center;
+  padding: 10px 0;
+}
+.index-menu-header {
   color: #FFF;
   background: #80bd01;
   font-size: 1.6rem;
   width: 100%;
 }
-.cnode-common-header .cnode-nav .cnode-nav-list {
+.index-menu-header .cnode-nav .cnode-nav-list {
   display: flex;
   display: -webkit-flex;
   align-items: center;
   padding: 10px 3px;
 }
-.cnode-common-header .cnode-nav .cnode-nav-list .cnode-nav-item {
+.index-menu-header .cnode-nav .cnode-nav-list .cnode-nav-item {
   flex: 1;
   text-align: center;
 }
-.cnode-common-header .cnode-nav .cnode-nav-list .cnode-nav-item:not(:last-child) {
+.index-menu-header .cnode-nav .cnode-nav-list .cnode-nav-item:not(:last-child) {
   border-right: 1px solid #618F00;
 }
-.cnode-common-header .cnode-nav .cnode-nav-list .cnode-nav-item .sel-nav {
+.index-menu-header .cnode-nav .cnode-nav-list .cnode-nav-item .sel-nav {
   background: #5e8a01;
   border-radius: 4px;
   width: 80%;
   display: inline-block;
   padding: 4px 0;
+}
+.common-cnode-header {
+  width: 100%;
+  font-size: 1.6rem;
+  color: #FFF;
+  background: #80bd01;
+  display: flex;
+  display: -webkit-flex;
+  padding: 10px 10px;
+}
+.common-cnode-header .header-txt-part {
+  flex: 1;
+  text-align: center;
 }
 .common-cnode-footer {
   color: #FFF;
@@ -61,58 +79,96 @@
 .common-cnode-footer .cnode-footer-sortlist .cnode-footer-options .msg-icon {
   font-size: 1.8rem;
 }
+.common-cnode-footer .cnode-footer-sortlist .cnode-footer-options a {
+  color: #FFF;
+}
 .common-cnode-footer .cnode-footer-sortlist .sel-footer-options {
   background: #87c701;
 }
-/* 主题首页 */
+/* 公用主题内容 */
 .cnode-main-wrapper {
   display: flex;
+  display: -webkit-flex;
   flex: 1;
   overflow-y: scroll;
   width: 100%;
 }
-.cnode-main-wrapper .cnode-topics-list {
+/* 首页主题列表 */
+.cnode-topics-list {
   width: 100%;
 }
-.cnode-main-wrapper .cnode-topics-list .cnode-topics-item {
+.cnode-topics-list .cnode-topics-item {
   width: 100%;
   padding: 10px 10px;
   box-sizing: border-box;
   border-bottom: 1px solid #ccc;
   font-size: 1.2rem;
 }
-.cnode-main-wrapper .cnode-topics-list .cnode-topics-item .topic-item-hd {
+.cnode-topics-list .cnode-topics-item .topic-item-hd {
   display: flex;
   display: -webkit-flex;
   align-items: center;
   margin-bottom: 6px;
 }
-.cnode-main-wrapper .cnode-topics-list .cnode-topics-item .topic-item-hd .topic-tit-btn {
+.cnode-topics-list .cnode-topics-item .topic-item-hd .topic-tit-btn {
   padding: 2px 4px;
   border-radius: 4px;
   border: 1px solid #ccc;
   margin-right: 10px;
 }
-.cnode-main-wrapper .cnode-topics-list .cnode-topics-item .topic-item-hd .topic-desc-tit {
+.cnode-topics-list .cnode-topics-item .topic-item-hd .topic-desc-tit {
   flex: 1;
   font-size: 1.4rem;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
-.cnode-main-wrapper .cnode-topics-list .cnode-topics-item .topic-item-bd {
+.cnode-topics-list .cnode-topics-item .topic-item-bd {
   display: flex;
   display: -webkit-flex;
   align-items: center;
 }
-.cnode-main-wrapper .cnode-topics-list .cnode-topics-item .topic-item-bd .topic-user-info {
+.cnode-topics-list .cnode-topics-item .topic-item-bd .topic-user-info {
   display: flex;
   display: -webkit-flex;
   flex: 1;
   align-items: center;
 }
-.cnode-main-wrapper .cnode-topics-list .cnode-topics-item .topic-item-bd .topic-user-info .topic-avatar {
+.cnode-topics-list .cnode-topics-item .topic-item-bd .topic-user-info .topic-avatar {
   height: 38px;
   border-radius: 19px;
   margin-right: 6px;
+}
+.signin-content-box {
+  width: 280px;
+  margin: 45% auto 0;
+  font-size: 1.4rem;
+}
+.signin-content-box .access-token-input {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #eee;
+  padding: 5px 10px;
+  box-sizing: border-box;
+}
+.signin-content-box .signin-btn {
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  line-height: 28px;
+  border-radius: 5px;
+  text-align: center;
+  color: #fff;
+  background: #80bd01;
+  margin-top: 30px;
+}
+.signin-msg-box {
+  position: absolute;
+  width: 100%;
+  margin-top: 30px;
+  text-align: center;
+  font-size: 1.6rem;
+}
+.signin-msg-box .signin-tip-link {
+  color: #80bd01;
 }

@@ -1,10 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
 import {createStore, applyMiddleware} from 'redux'
 import {Provider} from 'react-redux'
+import {HashRouter} from 'react-router-dom'
 import reducers from './reducers'
 import thunkMiddleware from 'redux-thunk'
+import Routers from './routers'
+
 
 let div = document.createElement('div');
 div.setAttribute('id', 'root');
@@ -19,8 +21,10 @@ const store = createStore(
 )
 
 ReactDOM.render(
-    <Provider store={store}>
-        <App />
-    </Provider>,
+    <HashRouter>
+        <Provider store={store}>
+            <Routers />
+        </Provider>
+    </HashRouter>,
     mountNode
 );

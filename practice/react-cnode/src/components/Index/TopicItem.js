@@ -8,11 +8,14 @@ class TopicItem extends Component{
 
        let tabBtn = null;
        const activeHeaderMenu = header_menus_redux.find(item => item.isActive);
+       console.log('ActiveHeaderMnu: ', activeHeaderMenu)
+       const ActiveName = activeHeaderMenu.name;
+       console.log('ActiveName: ', ActiveName)
        if(topicItem.top){
             tabBtn =  <span className="topic-tit-btn">置顶</span>
        }else if(topicItem.good){
             tabBtn =  <span className="topic-tit-btn">精华</span>
-       }else if(activeHeaderMenu.name === '全部'){
+       }else if(ActiveName === '全部'){
             switch(topicItem.tab){
                 case 'share':
                     tabBtn =  <span className="topic-tit-btn">分享</span>

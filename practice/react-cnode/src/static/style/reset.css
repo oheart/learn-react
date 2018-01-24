@@ -16,7 +16,7 @@ a:hover{ text-decoration:none;}
 
 /*去掉iPhone上的默认圆角样式*/
 input {-webkit-appearance:none; }
-input[type="submit"],input[type="reset"],input[type="button"],input{-webkit-appearance:none;}
+input[type="submit"],input[type="reset"],input[type="button"],input{-webkit-appearance:none;border:none;}
 textarea {-webkit-appearance: none;}
 
 
