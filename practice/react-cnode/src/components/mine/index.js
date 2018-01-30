@@ -6,6 +6,7 @@ import MineMain from './MineMain'
 import CommonFooter from '../common/CommonFooter'
 
 
+
 class Mine extends Component{
     render(){
         return (

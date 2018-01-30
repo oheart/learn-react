@@ -2,6 +2,11 @@
 @style-bg: #eee;
 @style-main : #80bd01;
 @style-color: #2c3e50;
+@white-color: #FFF;
+
+.white-color{
+    color:#FFF;
+}
 
 //根元素
 #root{
@@ -61,6 +66,7 @@
     display: flex;
     display: -webkit-flex;
     padding: 10px 10px;
+    box-sizing: border-box;
     .header-txt-part{
          flex:1;
          text-align:center;   
@@ -167,13 +173,13 @@
 .signin-content-box{
     width:280px;
     margin: 45% auto 0;
-    font-size: 1.4rem;
     .access-token-input{
         width:100%;
         border-radius: 5px;
         border: 1px solid #eee;
-        padding: 5px 10px;
+        padding: 8px 10px;
         box-sizing:border-box;
+        font-size: 1.2rem;
     }
     .signin-btn{
         display: block;
@@ -186,6 +192,7 @@
         background: #80bd01;
         margin-top:30px;
         border:none;
+        font-size: 1.4rem;
     }
 }
 // 未登录提示
@@ -197,5 +204,25 @@
     font-size: 1.6rem;
     .signin-tip-link{
         color: #80bd01;
+    }
+}
+
+//退出
+.signout-content-box{
+    width: 280px;
+    margin: 45% auto 0;
+    font-size: 1.4rem;
+    .signout{
+        display: block;
+        width: 100%;
+        padding: 5px 10px;
+        line-height: 28px;
+        border-radius: 5px;
+        text-align: center;
+        color: #fff;
+        background: #e63e3e;
+        margin-top:30px;
+        border:none;
+        font-size: 1.4rem;
     }
 }

@@ -2,12 +2,12 @@ import React, {Component} from 'react'
 import CommonHeader from '../common/CommonHeader'
 import ReturnIcon from './ReturnIcon'
 
-class SigninHeader extends Component{
+class SignoutHeader extends Component{
     render(){
         return (
             <div>
                  <CommonHeader 
-                    tit="登录"
+                    tit="退出"
                     left={
                         <ReturnIcon />
                     }
@@ -17,4 +17,4 @@ class SigninHeader extends Component{
     }
 }
 
-export default SigninHeader
+export default SignoutHeader

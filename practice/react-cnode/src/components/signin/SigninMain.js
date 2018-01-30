@@ -18,15 +18,7 @@ class SigninMain extends Component{
             tokenVal: value
         })
     }
-    signIn(){
-        const tokenVal = this.state.tokenVal;
-        if(!tokenVal){
-            alert('token不能为空！')
-            return;
-        }
-        this.setState({
-            btnVal: '登录中....'
-        })
+    req_login(tokenVal){
         Fetch.postRequest('/api/v1/accesstoken',{accesstoken:tokenVal},(res) => {
             console.log(res)
             if(res.success){
@@ -47,7 +39,17 @@ class SigninMain extends Component{
             alert('登录失败')
             this.setState({ btnVal: '登录' });
         })
-
+    }
+    signIn(){
+        const tokenVal = this.state.tokenVal;
+        if(!tokenVal){
+            alert('token不能为空！')
+            return;
+        }
+        this.setState({
+            btnVal: '登录中....'
+        })
+        this.req_login(tokenVal);
     }
     render(){
         return (
