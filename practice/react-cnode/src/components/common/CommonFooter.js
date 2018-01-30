@@ -1,15 +1,15 @@
 import React, {Component} from 'react'
-import {connect} from 'react-redux'
 import FooterMenuItem from './FooterMenuItem'
+import * as constants from '../../constants'
 
 class CommonFooter extends Component{
     render(){
-        const {footer_menus_redux} = this.props;
+        const footerMenus = constants.footerMenus;
         return (
             <footer className="common-cnode-footer">
                 <ul className="cnode-footer-sortlist">
                     {
-                            footer_menus_redux.map((menu, index) => 
+                            footerMenus.map((menu, index) => 
                                 <FooterMenuItem 
                                        key={menu.name}
                                        menu={menu}
@@ -22,10 +22,4 @@ class CommonFooter extends Component{
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        footer_menus_redux: state.footerMenus
-    }
-}
-
-export default connect(mapStateToProps)(CommonFooter)
+export default CommonFooter

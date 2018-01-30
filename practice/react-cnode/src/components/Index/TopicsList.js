@@ -5,40 +5,20 @@ import TopicItem from './TopicItem'
 import * as actions from '../../actions'
 import LoadMore from './LoadMore'
 
+import * as constants from '../../constants'
+import queryString from 'query-string'
+import {withRouter} from 'react-router-dom'
+
+
+
 class TopicsList extends Component{
     componentWillMount(){
-        const { dispatch_getTopics, header_menus_redux } = this.props;
-        console.log(this.props)
-        console.log(dispatch_getTopics)
-        
-        const ActiveHeaderMenu = header_menus_redux.find(item => item.isActive);
-        console.log('ActiveHeaderMnu: ', ActiveHeaderMenu)
-        const ActiveName = ActiveHeaderMenu.name;
-
-        switch(ActiveName){
-            case '全部':
-                dispatch_getTopics('', 1)
-                break;
-            case '精华':
-                dispatch_getTopics('good', 1)
-                break;
-            case '分享':
-                dispatch_getTopics('share', 1)
-                break;
-            case '问答':
-                dispatch_getTopics('ask', 1)
-                break;
-            case '招聘':
-                dispatch_getTopics('job', 1)
-                break;
-            case '测试':
-                dispatch_getTopics('dev', 1)
-                break;
-        }
+        const {dispatch_getTopics, location} = this.props;
+        const queryTab = queryString.parse(location.search).tab || '';
+        dispatch_getTopics(queryTab, 10, 1)
     }
     render(){
         const {topics_redux} = this.props;
-        console.log(topics_redux)
         return (
             <main className="cnode-main-wrapper">
                <div className="cnode-topics-list">
@@ -63,15 +43,14 @@ class TopicsList extends Component{
 
 const mapStateToProps = (state) => {
     return {
-        header_menus_redux: state.headerMenus,
         topics_redux: state.topicsList
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        dispatch_getTopics: (sort, page) => dispatch(actions.req_getTopics(sort, page))
+        dispatch_getTopics: (sort, limit, page) => dispatch(actions.req_getTopics(sort,limit,page))
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TopicsList)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(TopicsList))

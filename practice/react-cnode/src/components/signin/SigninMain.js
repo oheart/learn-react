@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import Fetch from '../../utils/fetch'
 import Service from '../../utils/service'
 
+
+
 class SigninMain extends Component{
     constructor(){
         super();
@@ -32,11 +34,9 @@ class SigninMain extends Component{
                 console.log(this.props)
                 //把用户信息存储到localStorage
                 Service.localItem('User', JSON.stringify(res))
+                console.log(this)
                 //跳转到我的页面
-                this.props.history.push({
-                    pathname: '/mine'
-                })
-               
+                location.replace("#/mine");
             }else{
                 alert('登录失败');
                 this.setState({ btnVal: '登录' });

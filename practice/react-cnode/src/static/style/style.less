@@ -37,6 +37,9 @@
                 &:not(:last-child) {
                     border-right: 1px solid #618F00;
                 }
+                a{
+                    color:#FFF;
+                }
                 .sel-nav {
                     background: #5e8a01;
                     border-radius: 4px;
@@ -76,7 +79,6 @@
         align-items: center;
         .cnode-footer-options {
             flex: 1;
-            padding: 6px 0;
             text-align: center;
             .iconfont {
                 font-size: 2rem;
@@ -96,7 +98,9 @@
             }
         }
         .sel-footer-options{
+            padding: 6px 0;
             background:#87c701;
+            display: block;   
         }
     }
 }
@@ -181,6 +185,7 @@
         color: #fff;
         background: #80bd01;
         margin-top:30px;
+        border:none;
     }
 }
 // 未登录提示

@@ -1,25 +1,10 @@
 import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
+import {NavLink, withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
-
-import * as actions from '../../actions'
 import FooterIcon from './FooterIcon'
 import Service from '../../utils/service'
 
 class FooterMenuItem extends Component{
-    clickFooterMenus(topicName){
-        // const {dispatch_toggleMenu, header_menus_redux, url} = this.props;
-        // console.log('props: ', this.props)
-        // dispatch_toggleMenu(topicName)
-        //如果是首页回到全部默认选中状态
-        // if(url === '/'){
-        //     dispatch_toggleMenu(topicName)
-        //     dispatch_toggleMenu('全部')
-        // }
-
-        const {dispatch_toggleMenu, url} = this.props;
-        console.log('props: .....', this.props)
-    }
     render(){
         const User = Service.localItem('User');
 
@@ -39,25 +24,23 @@ class FooterMenuItem extends Component{
                 break;
             case '我的':
                 if(!User){
-                    console.log('signin')
                     url = '/signin'
                 }else{
-                    console.log('mine')
                     url = '/mine';
                 }
                 break;    
         }
         return (
-            <li  className={isActive ? 'cnode-footer-options sel-footer-options' : 'cnode-footer-options'}
-                 onClick={(e) => this.clickFooterMenus(topicName)}
+                <li  className='cnode-footer-options'
                 >
-                    <Link to={url}>
+                    <NavLink exact to={`${menu.path}`} replace
+                             activeClassName='sel-footer-options'>
                         <FooterIcon 
                             topicName={topicName}
                             /><br/>
                         <span>{topicName}</span>
-                    </Link> 
-            </li> 
+                    </NavLink> 
+                </li>   
         )
     }
 }
@@ -68,10 +51,5 @@ const mapStateToProps = (state) => {
    }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        dispatch_toggleMenu: (topicName) => dispatch(actions.toggleMenu(topicName))
-    }
-}
 
-export default connect(mapStateToProps,mapDispatchToProps)(FooterMenuItem)
+export default withRouter(connect(mapStateToProps)(FooterMenuItem))

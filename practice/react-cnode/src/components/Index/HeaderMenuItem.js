@@ -1,49 +1,36 @@
 import React, {Component} from 'react'
+import {Link, withRouter} from 'react-router-dom'
+import queryString from 'query-string'
 import {connect} from 'react-redux'
 import * as actions from '../../actions'
 
 
+
 class HeaderMenuItem extends Component{
-    clickHeaderMenus(topicName){
-        const {dispatch_toggleMenu, dispatch_getTopics} = this.props;
-        dispatch_toggleMenu(topicName)
-        switch(topicName){
-            case '全部':
-                dispatch_getTopics('', 1)
-                break;
-            case '精华':
-                dispatch_getTopics('good', 1)
-                break;
-            case '分享':
-                dispatch_getTopics('share', 1)
-                break;
-            case '问答':
-                dispatch_getTopics('ask', 1)
-                break;
-            case '招聘':
-                dispatch_getTopics('job', 1)
-                break;
-            case '测试':
-                dispatch_getTopics('dev', 1)
-                break;
+    componentWillReceiveProps(nextProps) {
+        const {dispatch_getTopics, location, menu} = nextProps;
+        const queryTab = queryString.parse(location.search).tab || '';
+        const menuTab = menu.tab;
+        if(menuTab === queryTab){
+            dispatch_getTopics(queryTab, 10, 1)
         }
-       
     }
+    
     render(){
-        const {menu} = this.props;
-        console.log('menu: ', this.props)
+        const {menu, dispatch_getTopics, location} = this.props;
         const topicName = menu.name;
-        const isActive = menu.isActive;
+        const path = menu.path;
+        const queryTab = queryString.parse(location.search).tab || '';
+      
         return (
             <li
                 className="cnode-nav-item"
-                onClick={(e) => this.clickHeaderMenus(topicName)}
                 >
-                <a 
-                    className={isActive ? 'sel-nav' : ''}
-                    >
+                 <Link 
+                    to={path} replace
+                    className={queryTab === menu.tab ? 'sel-nav' : ''}>
                     {topicName}
-                </a>
+                </Link>
             </li>
         )
     }
@@ -52,12 +39,11 @@ class HeaderMenuItem extends Component{
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        dispatch_toggleMenu: (topicName) => dispatch(actions.toggleMenu(topicName)),
-        dispatch_getTopics: (sort, page) => dispatch(actions.req_getTopics(sort, page))
+        dispatch_getTopics: (sort, limit, page) => dispatch(actions.req_getTopics(sort, limit, page))
     }
 }
 
 
-export default connect(null, mapDispatchToProps)(HeaderMenuItem)
+export default withRouter(connect(null, mapDispatchToProps)(HeaderMenuItem))
 
 

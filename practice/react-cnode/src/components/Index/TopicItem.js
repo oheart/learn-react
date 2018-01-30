@@ -1,21 +1,22 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {withRouter} from 'react-router-dom'
+import queryString from 'query-string'
+
 
 class TopicItem extends Component{
     render(){
-       const {topicItem, header_menus_redux} = this.props;
+       const {topicItem, location} = this.props;
        const author = topicItem.author;
+       const queryTab = queryString.parse(location.search).tab || '';
 
+       //控制置顶、精华显示
        let tabBtn = null;
-       const activeHeaderMenu = header_menus_redux.find(item => item.isActive);
-       console.log('ActiveHeaderMnu: ', activeHeaderMenu)
-       const ActiveName = activeHeaderMenu.name;
-       console.log('ActiveName: ', ActiveName)
        if(topicItem.top){
             tabBtn =  <span className="topic-tit-btn">置顶</span>
        }else if(topicItem.good){
             tabBtn =  <span className="topic-tit-btn">精华</span>
-       }else if(ActiveName === '全部'){
+       }else if(queryTab === ''){
             switch(topicItem.tab){
                 case 'share':
                     tabBtn =  <span className="topic-tit-btn">分享</span>
@@ -53,10 +54,6 @@ class TopicItem extends Component{
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        header_menus_redux: state.headerMenus
-    }
-}
 
-export default connect(mapStateToProps)(TopicItem)
+
+export default withRouter(connect()(TopicItem))

@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Switch, Route} from 'react-router-dom'
+import {HashRouter, Switch, Route, Redirect} from 'react-router-dom'
 
 import '../static/style/reset.css'
 import '../static/style/style.less'
@@ -11,15 +11,17 @@ import Msg from '../components/msg'
 import Signin from '../components/signin'
 import Mine from '../components/mine'
 
+
 class Routers extends Component{
     render(){
-        return (
+        return (     
             <Switch>
                 <Route exact path='/' component={Index}/>
-                <Route exact path='/posted' component={Posted} />
-                <Route exact path='/msg' component={Msg} />
-                <Route exact path='/signin' component={Signin} />
-                <Route exact path='/mine' component={Mine} />
+                <Route exact  path='/posted' component={Posted} />
+                <Route exact  path='/msg' component={Msg} />
+                <Route exact  path='/signin' component={Signin} />
+                <Route exact  path='/mine' component={Mine} />
+                <Redirect to="/" /> 
             </Switch>
         )
     }
