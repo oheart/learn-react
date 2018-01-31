@@ -4,7 +4,8 @@ import Service from '../../utils/service'
 
 class SignoutMain extends Component{
     signout(){
-        Service.removeLocalItem('User');
+         //清空localStorage存储的所有数据
+         Service.clearLocalStorage();
          //跳转主页
          location.replace("#/");
     }

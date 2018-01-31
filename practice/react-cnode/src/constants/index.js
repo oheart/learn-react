@@ -53,3 +53,14 @@ export const footerMenus = [
     }
 ]
 
+
+export const userTopicReplyTab = [
+    {
+        name: '主题',
+        isActive: true
+    },
+    {
+        name: '回复',
+        isActive: false
+    }
+]

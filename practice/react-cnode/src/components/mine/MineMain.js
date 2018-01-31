@@ -8,18 +8,16 @@ class MineMain extends Component{
         const User = Service.localItem('User');
         let Mine = null;
         if(!User){
-            console.log('noe')
             Mine =  <SigninTipMsg />
         }else{
-            console.log('yes')
             Mine = <MineContent />
         }
 
         return (
             <main className="cnode-main-wrapper">
-                 <div>
+               <div>
                     {Mine}
-                </div>
+               </div>
             </main>
         )
     }

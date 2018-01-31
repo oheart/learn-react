@@ -33,6 +33,12 @@ let Service = {
         }
         return localStorage.removeItem();
     },
+    /**
+     * 清空localStorage存储的所有数据
+     */
+    clearLocalStorage: function(){
+        return localStorage.clear();
+    },
 
     /**
      * 格式化时间

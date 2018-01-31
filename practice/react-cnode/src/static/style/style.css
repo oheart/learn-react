@@ -1,6 +1,14 @@
 .white-color {
   color: #FFF;
 }
+.clear {
+  *zoom: 1;
+}
+.clear:after {
+  clear: both;
+  content: '';
+  display: block;
+}
 #root {
   height: 100%;
 }
@@ -199,4 +207,54 @@
   margin-top: 30px;
   border: none;
   font-size: 1.4rem;
+}
+.user-info-wrapper {
+  position: absolute;
+  width: 100%;
+}
+.user-info-wrapper .user-info-center {
+  width: 100%;
+  padding: 20px 0;
+  background: #87c701;
+  color: #FFF;
+  text-align: center;
+  font-size: 1.2rem;
+}
+.user-info-wrapper .user-info-center .user-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+}
+.user-info-wrapper .user-info-center .user-login-name {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.user-info-wrapper .user-info-center .user-reg-date {
+  margin-left: 20px;
+}
+.user-info-wrapper .user-topic-reply {
+  font-size: 1.4rem;
+}
+.user-info-wrapper .user-topic-reply .topic-reply-tab {
+  display: flex;
+  display: -webkit-flex;
+  font-size: 1.6rem;
+  text-align: center;
+  background: #eee;
+}
+.user-info-wrapper .user-topic-reply .topic-reply-tab .uinfo-tab-option {
+  flex: 1;
+  padding: 8px 0;
+}
+.user-info-wrapper .user-topic-reply .topic-reply-tab .sel-uinfo-tab {
+  border-bottom: 3px solid #80bd01;
+}
+.user-info-wrapper .user-topic-reply .topic-reply-list .trlist-item {
+  padding: 8px 6px;
+  border-bottom: 1px solid #eee;
+}
+.user-info-wrapper .user-topic-reply .topic-reply-list .trlist-item .tr-res-date {
+  font-size: 1.2rem;
+  color: #aaa;
+  float: right;
 }
