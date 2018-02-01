@@ -60,6 +60,7 @@
   display: -webkit-flex;
   padding: 10px 10px;
   box-sizing: border-box;
+  align-items: center;
 }
 .common-cnode-header .header-txt-part {
   flex: 1;
@@ -95,6 +96,15 @@
 }
 .common-cnode-footer .cnode-footer-sortlist .cnode-footer-options a {
   color: #FFF;
+}
+.common-cnode-footer .cnode-footer-sortlist .cnode-footer-options .unread-msg-hint {
+  background: red;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  position: relative;
+  top: -5px;
+  left: 24px;
 }
 .common-cnode-footer .cnode-footer-sortlist .sel-footer-options {
   padding: 6px 0;
@@ -257,4 +267,65 @@
   font-size: 1.2rem;
   color: #aaa;
   float: right;
+}
+.my-msg-list {
+  width: 100%;
+  position: absolute;
+}
+.my-msg-list .my-msg-item {
+  display: flex;
+  display: -webkit-flex;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  font-size: 1.4rem;
+  align-items: center;
+}
+.my-msg-list .my-msg-item .msg-user-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 19px;
+  border: 1px solid #ddd;
+  background-size: cover;
+}
+.my-msg-list .my-msg-item .my-msg-details {
+  margin-left: 10px;
+}
+.my-msg-list .my-msg-item .my-msg-details .msg-create-user {
+  font-weight: bold;
+}
+.my-msg-list .my-msg-item .my-msg-details .msg-create-time {
+  margin-left: 5px;
+  font-size: 1.2rem;
+  color: #999;
+}
+.my-msg-list .my-msg-item .my-msg-details .unread-red-dot {
+  color: red;
+  margin-right: 4px;
+}
+.my-msg-list .my-msg-item .my-msg-details .msg-reply-content {
+  color: #80bd01;
+}
+.posted-icon {
+  font-size: 2.4rem!important;
+}
+.post-content-box {
+  position: absolute;
+  width: 100%;
+}
+.post-content-box .post-content-list .post-content-item {
+  padding: 10px 10px;
+  border-bottom: 1px solid #eee;
+  color: #444;
+}
+.post-content-box .post-content-list .post-content-item .post-content-input {
+  width: 100%;
+  border: none;
+  padding: 6px 0;
+  font-size: 1.4rem;
+  color: #444;
+}
+.post-content-box .post-content-list .post-content-item .post-content-select {
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-size: 1.4rem;
 }

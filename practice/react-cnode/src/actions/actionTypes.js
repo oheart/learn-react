@@ -1,1 +1,2 @@
-export const UPDATE_TOPICS = 'UPDATE_TOPICS'
+export const SWITCH_TOPICS = 'SWITCH_TOPICS'
+export const UPDATE_TOPIC = 'UPDATE_TOPIC'

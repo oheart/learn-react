@@ -20,13 +20,11 @@ class SigninMain extends Component{
     }
     req_login(tokenVal){
         Fetch.postRequest('/api/v1/accesstoken',{accesstoken:tokenVal},(res) => {
-            console.log(res)
             if(res.success){
                 alert('登录成功')
-                console.log(this.props)
+                res.accesstoken = tokenVal;
                 //把用户信息存储到localStorage
                 Service.localItem('User', JSON.stringify(res))
-                console.log(this)
                 //跳转到我的页面
                 location.replace("#/mine");
             }else{

@@ -1,11 +1,81 @@
 import React, {Component} from 'react'
+import Fetch from '../../utils/fetch'
+import Service from '../../utils/service'
 
 class MsgContent extends Component{
+    constructor(){
+        super();
+        this.state = {
+            msgList:[]
+        }
+    }
+    req_getMessage(accesstoken){
+        Fetch.getRequest('/api/v1/messages',{accesstoken: accesstoken},(res) => {
+            console.log(res)
+            const has_read_messages = res.data.has_read_messages;
+            const hasnot_read_messages = res.data.hasnot_read_messages;
+            const total_messages = hasnot_read_messages.concat(has_read_messages);
+            this.setState({
+                msgList: total_messages
+            })
+
+        },(error) => {
+            console.log(error)
+        })
+    }
+    componentDidMount(){
+        const User = Service.localItem('User');
+        const accesstoken = JSON.parse(User).accesstoken;
+        this.req_getMessage(accesstoken);
+    }
     render(){
+        const msgList = this.state.msgList;
         return (
             <main className="cnode-main-wrapper">
-                 <div>
-                    msgContent
+                 <div className="my-msg-list">
+                     {
+                         msgList.map((item, index) => {
+                                const {author,reply, topic, has_read, type} = item;
+                                let content = null;
+                                let redDot = null;
+                                if(!has_read){
+                                    redDot =  <span className="unread-red-dot">●</span>;
+                                }
+                                if(type == 'at'){
+                                    content = 
+                                        <p>
+                                                {redDot}
+                                                <span className="msg-reply-txt">在话题</span>
+                                                <span className="msg-reply-content">{topic.title}</span>
+                                                <span>中@了你</span>
+                                        </p>
+                                               
+                                }else{
+                                    content =   
+                                        <p>
+                                                {redDot}
+                                                <span className="msg-reply-txt">回复了你的话题</span>
+                                                <span className="msg-reply-content">{topic.title}</span>
+                                        </p>
+                                }
+                                return (
+                                    <div 
+                                        key={index}
+                                        className="my-msg-item">
+                                            <img className="msg-user-avatar"
+                                                src={author.avatar_url} />
+                                            <div className="my-msg-details">
+                                                <p>
+                                                    <span className="msg-create-user">{author.loginname}</span>
+                                                    <span className="msg-create-time">2月前</span>
+                                                </p>
+                                                {content}
+                                            </div>
+                                    </div>
+                                )
+                            })
+                     }
+                     
                 </div>
             </main>
         )

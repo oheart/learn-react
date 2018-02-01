@@ -8,10 +8,8 @@ class PostedMain extends Component{
         const User = Service.localItem('User');
         let Posted = null;
         if(!User){
-            console.log('signin....')
             Posted =  <SigninTipMsg />
         }else{
-            console.log('msgcontent...')
             Posted = <PostedContent />
         }
 

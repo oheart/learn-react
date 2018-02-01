@@ -76,6 +76,7 @@
     display: -webkit-flex;
     padding: 10px 10px;
     box-sizing: border-box;
+    align-items: center;
     .header-txt-part{
          flex:1;
          text-align:center;   
@@ -111,6 +112,15 @@
             a{
                 color:#FFF;
             }
+            .unread-msg-hint{
+                background:red;
+                padding:2px 6px;
+                border-radius:50%;
+                font-size:1.3rem;
+                position: relative;
+                top: -5px;
+                left: 24px;
+            } 
         }
         .sel-footer-options{
             padding: 6px 0;
@@ -290,3 +300,72 @@
         }
     }
 }
+
+
+//消息
+.my-msg-list{
+    width:100%;
+    position:absolute;
+    .my-msg-item{
+        display: flex;
+        display: -webkit-flex;
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+        font-size:1.4rem;
+        align-items: center;
+        .msg-user-avatar{
+            width: 38px;
+            height: 38px;
+            border-radius:19px;
+            border: 1px solid #ddd;
+            background-size: cover;
+        }
+        .my-msg-details{
+            margin-left: 10px;
+            .msg-create-user{
+                font-weight: bold;
+            }
+            .msg-create-time{
+                margin-left: 5px;
+                font-size: 1.2rem;
+                color: #999;
+            }
+            .unread-red-dot{
+                color:red;
+                margin-right: 4px;
+            }
+            .msg-reply-content{
+                color: #80bd01;
+            }
+        }
+    }
+}
+
+// 发表
+.posted-icon{
+    font-size: 2.4rem!important;
+}
+.post-content-box{
+    position: absolute;
+    width: 100%;
+    .post-content-list{
+        .post-content-item{
+            padding: 10px 10px;
+            border-bottom: 1px solid #eee;
+            color: #444;
+            .post-content-input{
+                width:100%;
+                border:none;
+                padding:6px 0;
+                font-size: 1.4rem;
+                color:#444;
+            }
+            .post-content-select{
+                border-radius:3px;
+                box-sizing: border-box;
+                font-size:1.4rem;
+            }
+        }
+    }
+}
+    

@@ -2,7 +2,7 @@ import * as actionTypes from '../actions/actionTypes'
 
 function topicsList(topics = [], action){
     switch(action.type){
-        case actionTypes.UPDATE_TOPICS:
+        case actionTypes.SWITCH_TOPICS:
             return action.topics
         default:
             return topics
