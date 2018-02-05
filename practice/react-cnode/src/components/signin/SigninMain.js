@@ -20,7 +20,8 @@ class SigninMain extends Component{
         })
     }
     req_login(tokenVal){
-        Fetch.postRequest('/api/v1/accesstoken',{accesstoken:tokenVal},(res) => {
+        const url = Service.getReqUrl().signin;
+        Fetch.postRequest(url ,{accesstoken:tokenVal},(res) => {
             if(res.success){
                 alert('登录成功')
                 res.accesstoken = tokenVal;

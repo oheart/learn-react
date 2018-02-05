@@ -13,7 +13,8 @@ class MineContent extends Component{
         }
     }
     req_getUserInfo(loginname){
-        Fetch.getRequest('/api/v1/user/' + loginname, null ,(res) => {
+        const url = Service.getReqUrl().getUserDetail;
+        Fetch.getRequest(url + loginname, null ,(res) => {
             this.setState({
                 userInfo: res.data
             })

@@ -1,12 +1,6 @@
 import Fetch from '../utils/fetch'
-
-// Fetch.getRequest("https://phodal.github.io/growth-api-gitbook/api.json", null, (res) => {
-//     console.log(res);
-// },(error) =>{
-//     console.log(error)
-// });
-
 import * as actionTypes from './actionTypes'
+import Service from '../utils/service'
 
 export function switchTopics(topics){
     return {
@@ -17,8 +11,8 @@ export function switchTopics(topics){
 
 export function req_getTopics(sort,limit, page){
     return function(dispatch){
-        return Fetch.getRequest("/api/v1/topics", {tab: sort, limit: limit, page: page}, (res) => {
-            // console.log(res.data);
+        const url = Service.getReqUrl().getTopics;
+        return Fetch.getRequest(url, {tab: sort, limit: limit, page: page}, (res) => {
             dispatch(switchTopics(res.data))
         },(error) =>{
             console.log(error)

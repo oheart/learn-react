@@ -32,12 +32,15 @@ class ReplyBox extends Component{
             accesstoken: accesstoken,
             content: content
         };
-        console.log('replyId,', replyId)
+
+        //如果回复id存在,传递replyId，评论内容加上@用户名
         if(replyId){
             params.content = `[@${currentUname}](#/mine/${currentUname}) ${content}`
             params.reply_id = replyId
         }
-        Fetch.postRequest(`/api/v1//topic/${topicId}/replies`, params , (res) => {
+        
+        const url  = Service.getReqUrl().createComment(topicId);
+        Fetch.postRequest(url, params , (res) => {
             if(res.success){
                 alert('回复成功')
                 this.setState({

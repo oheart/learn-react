@@ -13,9 +13,9 @@ class PostedIcon extends Component{
         const params = updateTopic;
         params.accesstoken = accesstoken;
 
-        Fetch.postRequest('/api/v1/topics', params, (res) => {
+        const url = Service.getReqUrl().createTopics;
+        Fetch.postRequest(url, params, (res) => {
            if(res.success){
-               console.log(res)
                alert('发表成功');
            }else{
                alert(res.error_msg)

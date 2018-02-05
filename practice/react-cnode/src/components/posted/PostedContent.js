@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import Fetch from '../../utils/fetch'
 import {connect} from 'react-redux'
 import * as actions from '../../actions'
 

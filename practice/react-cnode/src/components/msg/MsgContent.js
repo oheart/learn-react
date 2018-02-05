@@ -11,8 +11,8 @@ class MsgContent extends Component{
         }
     }
     req_getMessage(accesstoken){
-        Fetch.getRequest('/api/v1/messages',{accesstoken: accesstoken},(res) => {
-            console.log(res)
+        const url = Service.getReqUrl().getMsg;
+        Fetch.getRequest(url,{accesstoken: accesstoken},(res) => {
             const has_read_messages = res.data.has_read_messages;
             const hasnot_read_messages = res.data.hasnot_read_messages;
             const total_messages = hasnot_read_messages.concat(has_read_messages);

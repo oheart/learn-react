@@ -16,9 +16,9 @@ class TopicMain extends Component{
     req_getTopicDetails(){
         const {match} = this.props;
         const topicId = match.params.topicId;
-        Fetch.getRequest('/api/v1/topic/' + topicId, null , (res) => {
-            console.log(res)
-            console.log('topicDetail.....')
+
+        const url = Service.getReqUrl().topicDetail;
+        Fetch.getRequest(url + topicId, null , (res) => {
             if(res.success){
                 this.setState({
                     detailData: res.data

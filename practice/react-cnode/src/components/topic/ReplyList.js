@@ -30,8 +30,8 @@ class ReplyList extends Component{
             alert('你不能给自己点赞');
             return;
         }
-
-        Fetch.postRequest(`/api/v1/reply/${replyId}/ups`, {accesstoken}, (res) => {
+        const url = Service.getReqUrl().clickLike(replyId);
+        Fetch.postRequest(url, {accesstoken}, (res) => {
             if(res.success){
                 //点赞成功后调用父级方法更新主题详情
                 req_getTopicDetails();

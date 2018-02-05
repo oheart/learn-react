@@ -15,7 +15,8 @@ class FooterMenuItem extends Component{
         const User = Service.localItem('User');
         if(User){
             const accesstoken = JSON.parse(User).accesstoken || '';
-            Fetch.getRequest('/api/v1/message/count',{accesstoken: accesstoken},(res) => {
+            const url = Service.getReqUrl().getUnreadCount;
+            Fetch.getRequest(url ,{accesstoken: accesstoken},(res) => {
                     if(this._isMounted){
                         this.setState({
                             msgCount: res.data

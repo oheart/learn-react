@@ -1,18 +1,23 @@
-let BaseURL = 'url';
 let Service = {
-    /**
-     * 登录
-     * email 邮箱账号 string类型
-     * password 密码 string类型
-     */
-    login :BaseURL + "/signin",
+    //项目接口请求的基准url
+    BaseURL: '/api/v1',
 
-    /**
-     * 本地数据存储或读取
-     * 
-     *  key 键名
-     *  value 值
-     */
+    // 获取接口请求的url地址
+    getReqUrl: function(){
+        return {
+            signin: this.BaseURL + "/accesstoken",     //登录  
+            getTopics: this.BaseURL + "/topics",     //获取首页主题 (get)
+            getUnreadCount: this.BaseURL + "/message/count", //获取未读消息数
+            getUserDetail: this.BaseURL + "/user/",  //获取用户详情
+            getMsg: this.BaseURL + "/messages" ,     // 获取已读和未读消息
+            createTopics: this.BaseURL + "/topics", //新建主题 (post)
+            topicDetail: this.BaseURL + "/topic/", //主题详情 (get)
+            createComment: (topicId) => this.BaseURL + `/topic/${topicId}/replies`, //新建评论 (post)
+            clickLike: (replyId) => this.BaseURL + `/reply/${replyId}/ups`  //为评论点赞 (post)
+        }
+    },
+
+    // 本地数据存储或者读取
     localItem: function (key, value) {
         if (arguments.length == 1) {
             return localStorage.getItem(key);
@@ -20,30 +25,21 @@ let Service = {
             return localStorage.setItem(key, value);
         }
     },
-    
-    /**
-     * 删除本地数据
-     * 
-     * key 键名
-     * value 值
-     */
+
+    //删除某项本地存储
     removeLocalItem: function (key) {
         if (key) {
             return localStorage.removeItem(key);
         }
         return localStorage.removeItem();
     },
-    /**
-     * 清空localStorage存储的所有数据
-     */
+
+    //清空所有本地存储
     clearAllLocal: function(){
         return localStorage.clear();
     },
 
-    /**
-     * 格式化时间
-     * 
-     */
+    //格式化时间
     formatDate: function (str) {
         var date = new Date(str);
         var time = new Date().getTime() - date.getTime(); //现在的时间-传入的时间 = 相差的时间（单位 = 毫秒）
@@ -64,9 +60,7 @@ let Service = {
         }
     },
 
-    /**
-     * 判断是否是空对象
-     */
+    //判断是否是空对象
     isEmptyObj(obj){
      // because Object.keys(new Date()).length === 0;
      // we have to do some additional check
@@ -74,6 +68,5 @@ let Service = {
     }
 
 };
-
 
 export default Service;
