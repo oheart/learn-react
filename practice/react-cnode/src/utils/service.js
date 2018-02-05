@@ -5,11 +5,11 @@ let Service = {
     // 获取接口请求的url地址
     getReqUrl: function(){
         return {
-            signin: this.BaseURL + "/accesstoken",     //登录  
+            signin: this.BaseURL + "/accesstoken",     //登录 (post) 
             getTopics: this.BaseURL + "/topics",     //获取首页主题 (get)
-            getUnreadCount: this.BaseURL + "/message/count", //获取未读消息数
-            getUserDetail: this.BaseURL + "/user/",  //获取用户详情
-            getMsg: this.BaseURL + "/messages" ,     // 获取已读和未读消息
+            getUnreadCount: this.BaseURL + "/message/count", //获取未读消息数 (get)
+            getUserDetail: this.BaseURL + "/user/",  //获取用户详情 (post)
+            getMsg: this.BaseURL + "/messages" ,     // 获取已读和未读消息 (get)
             createTopics: this.BaseURL + "/topics", //新建主题 (post)
             topicDetail: this.BaseURL + "/topic/", //主题详情 (get)
             createComment: (topicId) => this.BaseURL + `/topic/${topicId}/replies`, //新建评论 (post)
