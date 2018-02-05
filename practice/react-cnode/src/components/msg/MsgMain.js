@@ -14,11 +14,9 @@ class MsgMain extends Component{
         }
 
         return (
-            <main className="cnode-main-wrapper">
-                 <div>
-                    {Msg}
-                </div>
-            </main>
+            <div className="main-part-wrapper">
+                {Msg}
+            </div>
         )
     }
 }

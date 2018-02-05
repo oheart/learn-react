@@ -9,8 +9,8 @@ class TopicReply extends Component{
                     data.map(item =>
                         <li 
                             key={item.id}
-                            className="trlist-item clear">
-                            <span>{item.title}</span>
+                            className="trlist-item">
+                            <span className="tr-reply-tit">{item.title}</span>
                             <span  className="tr-res-date">1小时前</span>
                         </li>
                     )

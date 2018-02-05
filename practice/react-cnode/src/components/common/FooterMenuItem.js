@@ -43,15 +43,16 @@ class FooterMenuItem extends Component{
      }
      
     render(){
-        const User = Service.localItem('User');
         const {menu} = this.props;
         const topicName = menu.name;
+        const User = Service.localItem('User');
 
         //未登录时点击我的跳转到登录页面，登录之后跳转到我的页面
         if(menu.name == '我的' && !User){
             menu.path = '/signin'
         }else if(menu.name == '我的' && User){
-            menu.path = '/mine'
+            const loginname = JSON.parse(User).loginname;
+            menu.path = '/mine/' + loginname
         }
 
         //未读消息

@@ -14,11 +14,9 @@ class PostedMain extends Component{
         }
 
         return (
-            <main className="cnode-main-wrapper">
-                <div>
+            <div className="main-part-wrapper">
                     {Posted}
-                </div>
-            </main>
+            </div>
         )
     }
 }

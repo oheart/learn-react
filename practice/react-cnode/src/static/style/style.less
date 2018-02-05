@@ -138,7 +138,11 @@
     flex: 1;
     overflow-y: scroll;
     width:100%;
-   
+}
+.main-part-wrapper{
+    width:100%;
+    flex: 1;
+    overflow-y: scroll;
 }
 
 /* 首页主题列表 */
@@ -216,9 +220,8 @@
 }
 // 未登录提示
 .signin-msg-box{
-    position:absolute;
     width:100%;
-    margin-top: 30px;
+    margin:30px 0 30px;
     text-align: center;
     font-size: 1.6rem;
     .signin-tip-link{
@@ -248,7 +251,6 @@
 
 //个人中心
 .user-info-wrapper{
-    position: absolute;
     width: 100%;
     .user-info-center{
         width:100%;
@@ -289,12 +291,20 @@
         }
         .topic-reply-list{
             .trlist-item{
-                padding: 8px 6px;
+                display:flex;
+                align-items:center;
+                padding: 8px 8px;
                 border-bottom: 1px solid #eee;
+                box-sizing:border-box;
+                .tr-reply-tit{
+                    flex: 1;
+                    text-overflow:ellipsis;
+                    white-space:nowrap;
+                    overflow:hidden;
+                }
                 .tr-res-date{
                     font-size: 1.2rem;
                     color: #aaa;
-                    float:right;
                 }
             }
         }
@@ -305,7 +315,6 @@
 //消息
 .my-msg-list{
     width:100%;
-    position:absolute;
     .my-msg-item{
         display: flex;
         display: -webkit-flex;
@@ -346,7 +355,6 @@
     font-size: 2.4rem!important;
 }
 .post-content-box{
-    position: absolute;
     width: 100%;
     .post-content-list{
         .post-content-item{
@@ -369,3 +377,133 @@
     }
 }
     
+// 主题详情
+.topic-detail-content{
+    .topic-detail-uinfo{
+        display: flex;
+        display: -webkit-flex;
+        border-bottom:1px solid #eee;
+        padding: 10px 6px;
+        font-size: 1.3rem;
+        color:#666;
+        .uinfo-details-inner{
+            display: flex;
+            display: -webkit-flex;
+            flex: 1;
+            .topic-user-avatar{
+                height: 38px;
+                border-radius: 19px;
+                margin-right: 6px;
+            }
+            .topic-detail-user{
+                color:#80bd01;
+                margin-right:6px;
+            }
+            .topic-read-num{
+                margin-right: 6px;
+            }
+        }
+        .user-landlord-txt{
+            color:#aaa;
+        }
+    }
+    .topic-article-info{
+        .topic-articel-title{
+            text-align:center;
+            padding: 10px 8px;
+            background: #eee;
+        }
+        .topic-articel-content{
+            padding: 10px 10px;
+            overflow:hidden;
+            line-height:18px;
+            & img{
+                width:100%;
+            }
+        }
+    }
+}
+.topic-reply-detail-content{
+    .reply-num-box{
+        background: #eee;
+        border-left: 8px solid #80bd01;
+        padding: 5px 10px;
+        font-size: 1.4rem;
+    }
+    .reply-list-box{
+        .reply-list-part{
+            padding: 10px 10px;
+            border-bottom:1px solid #ddd;
+            .topic-list-uinfo{
+                display: flex;
+                display: -webkit-flex;
+                color:#666;
+                font-size: 1.3rem;
+                .uinfo-details-area{
+                    flex: 1;
+                    display: flex;
+                    display: -webkit-flex;
+                    .topic-user-avatar{
+                        height: 38px;
+                        border-radius: 19px;
+                        margin-right: 6px;
+                    }
+                    .topic-detail-user{
+                        color:#80bd01;
+                        margin-right:6px;
+                    }
+                    .topic-read-num{
+                        margin-right: 6px;
+                    }
+                }
+                .user-landlord-txt{
+                    color:#aaa;
+                }
+            }
+            .like-reply-content{
+                margin-top: 10px;
+                text-align:right;
+                .like-num{
+                    position: relative;
+                    top: -4px;
+                    left: 2px;
+                    color: #969494;
+                }
+                & .ever-like-style{
+                    color:#80bd01;
+                    .like-num{
+                        color: #80bd01;
+                    }
+                }
+                .reply-topic-icon{
+                    margin-left: 10px;
+                }
+            }
+        }
+        .detail-reply-box{
+            padding: 15px 14px;
+            box-sizing:border-box;
+            text-align:right;
+            .reply-textarea{
+                width:100%;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                height: 120px;
+                padding: 10px;
+                box-sizing:border-box;
+                font-size: 1.4rem;
+            }
+            .reply-btn{
+                padding: 5px 30px;
+                line-height: 24px;
+                border-radius: 5px;
+                border: 1px solid #6fa401;
+                font-size: 14px;
+                color: #fff;
+                background: #80bd01;
+                margin-top: 10px;
+            }
+        }
+    }
+    
+}

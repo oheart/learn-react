@@ -3,6 +3,7 @@ import Service from '../../utils/service'
 import Fetch from '../../utils/fetch'
 import UserInfoCenter from './UserInfoCenter'
 import UserTopicReply from './UserTopicReply'
+import {withRouter} from 'react-router-dom'
 
 class MineContent extends Component{
     constructor(){
@@ -21,8 +22,8 @@ class MineContent extends Component{
         })
     }
     componentDidMount(){
-        const User = Service.localItem('User');
-        const loginname = JSON.parse(User).loginname;
+        //从路由获取对应用户的登录名
+        const loginname = this.props.match.params.loginname;
         this.req_getUserInfo(loginname);
     }
     render(){
@@ -46,4 +47,4 @@ class MineContent extends Component{
     }
 }
 
-export default MineContent
+export default withRouter(MineContent)

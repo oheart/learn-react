@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import Fetch from '../../utils/fetch'
 import Service from '../../utils/service'
+import {Link} from 'react-router-dom'
 
 class MsgContent extends Component{
     constructor(){
@@ -62,8 +63,10 @@ class MsgContent extends Component{
                                     <div 
                                         key={index}
                                         className="my-msg-item">
-                                            <img className="msg-user-avatar"
-                                                src={author.avatar_url} />
+                                            <Link to={`/mine/${author.loginname}`}>
+                                                <img className="msg-user-avatar"
+                                                    src={author.avatar_url} />
+                                            </Link>
                                             <div className="my-msg-details">
                                                 <p>
                                                     <span className="msg-create-user">{author.loginname}</span>

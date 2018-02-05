@@ -14,11 +14,9 @@ class MineMain extends Component{
         }
 
         return (
-            <main className="cnode-main-wrapper">
-               <div>
+               <div className="main-part-wrapper">
                     {Mine}
                </div>
-            </main>
         )
     }
 }

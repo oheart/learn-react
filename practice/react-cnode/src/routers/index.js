@@ -11,6 +11,7 @@ import Msg from '../components/msg'
 import Signin from '../components/signin'
 import Signout from '../components/signout'
 import Mine from '../components/mine'
+import Topic from '../components/topic'
 
 
 class Routers extends Component{
@@ -22,7 +23,8 @@ class Routers extends Component{
                 <Route exact  path='/msg' component={Msg} />
                 <Route exact  path='/signin' component={Signin} />
                 <Route exact  path='/signout' component={Signout} />
-                <Route exact  path='/mine' component={Mine} />
+                <Route exact  path='/mine/:loginname' component={Mine} />
+                <Route exact path='/topic/:topicId' component={Topic} />
                 <Redirect to="/" /> 
             </Switch>
         )

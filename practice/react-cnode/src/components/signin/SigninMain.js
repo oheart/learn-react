@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import Fetch from '../../utils/fetch'
 import Service from '../../utils/service'
+import {withRouter} from 'react-router-dom'
 
 
 
@@ -26,7 +27,9 @@ class SigninMain extends Component{
                 //把用户信息存储到localStorage
                 Service.localItem('User', JSON.stringify(res))
                 //跳转到我的页面
-                location.replace("#/mine");
+                this.props.history.push({
+                    pathname: '/mine/' + res.loginname
+                })
             }else{
                 alert('登录失败');
                 this.setState({ btnVal: '登录' });
@@ -70,4 +73,4 @@ class SigninMain extends Component{
     }
 }
 
-export default SigninMain
+export default withRouter(SigninMain)

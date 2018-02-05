@@ -36,7 +36,7 @@ let Service = {
     /**
      * 清空localStorage存储的所有数据
      */
-    clearLocalStorage: function(){
+    clearAllLocal: function(){
         return localStorage.clear();
     },
 
@@ -62,6 +62,15 @@ let Service = {
         } else {
             return parseInt(time / 31536000000) + '年前';
         }
+    },
+
+    /**
+     * 判断是否是空对象
+     */
+    isEmptyObj(obj){
+     // because Object.keys(new Date()).length === 0;
+     // we have to do some additional check
+       return Object.keys(obj).length === 0 && obj.constructor === Object;
     }
 
 };

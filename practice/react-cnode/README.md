@@ -1,5 +1,5 @@
 ## react-cnode
-
+基于webpack + react + react-router + redux + less + ES6 的React版cnode社区
 ## Note  
 1. **webpack-dev-server搭建环境（开发／生产），proxy实现访问cnode社区的接口请求**      
 [cnode-API](https://cnodejs.org/api)
@@ -24,5 +24,11 @@ https://github.com/brickspert/blog/issues/3
 
 ![发表主题](src/static/img/create_topic.png)
 
-用state传来传去有点麻烦，用的redux，也刚好练习练习redux；但是redux貌似都是存状态（网页的dark和light模式等等），可能不太恰当吧；先不改了；
+用state传来传去有点麻烦，用的redux，也刚好练习练习redux,想的是公用组件，多个组件共用数据的情况就可以用redux；但是redux貌似都是存状态（网页的dark和light模式等等），可能不太恰当吧；先不改了；
+
+7. [Where to Fetch Data: componentWillMount vs componentDidMount](https://daveceddia.com/where-fetch-data-componentwillmount-vs-componentdidmount/)
+
+
+## 参考链接
+[react-cnode](https://github.com/lzxb/react-cnode)
 
