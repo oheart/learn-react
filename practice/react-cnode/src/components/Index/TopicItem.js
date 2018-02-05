@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Link, withRouter} from 'react-router-dom'
 import queryString from 'query-string'
+import Service from '../../utils/service'
 
 
 class TopicItem extends Component{
@@ -50,12 +51,12 @@ class TopicItem extends Component{
                             <img className="topic-avatar" src={author.avatar_url} />
                             <div>
                                 <span>{author.loginname}</span><br/>
-                                <span>10天前</span>
+                                <span>{Service.formatDate(topicItem.create_at)}</span>
                             </div>
                         </div>
                         <div className="topic-date-info">
                             <span>{topicItem.reply_count}/{topicItem.visit_count}</span><br/>
-                            <span>2天前</span>
+                            <span>{Service.formatDate(topicItem.last_reply_at)}</span>
                         </div>
                     </div>
             </div>

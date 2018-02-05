@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-
 import {withRouter} from 'react-router-dom'
+import Service from '../../utils/service'
 
 class TopicDetail extends Component{
     render(){
@@ -16,7 +16,7 @@ class TopicDetail extends Component{
                            <div>
                                <p>
                                     <span className="topic-detail-user">{author.loginname}</span>
-                                    <span>10天前</span>
+                                    <span>{Service.formatDate(detailData.create_at)}</span>
                                </p>
                                <p>
                                     <span className="topic-read-num">阅读：{detailData.visit_count}</span>

@@ -56,7 +56,9 @@ class MsgContent extends Component{
                                         <p>
                                                 {redDot}
                                                 <span className="msg-reply-txt">回复了你的话题</span>
-                                                <span className="msg-reply-content">{topic.title}</span>
+                                                <span>
+                                                    <Link  className="msg-reply-content" to={`/topic/${topic.id}`}>{topic.title}</Link>
+                                                </span>
                                         </p>
                                 }
                                 return (
@@ -70,7 +72,7 @@ class MsgContent extends Component{
                                             <div className="my-msg-details">
                                                 <p>
                                                     <span className="msg-create-user">{author.loginname}</span>
-                                                    <span className="msg-create-time">2月前</span>
+                                                    <span className="msg-create-time">{Service.formatDate(reply.create_at)}</span>
                                                 </p>
                                                 {content}
                                             </div>
