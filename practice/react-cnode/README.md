@@ -28,6 +28,22 @@ https://github.com/brickspert/blog/issues/3
 
 7. [Where to Fetch Data: componentWillMount vs componentDidMount](https://daveceddia.com/where-fetch-data-componentwillmount-vs-componentdidmount/)
 
+8. **使用react-redux的时候，是每个需要store数据的组件都去connect一次，还是在顶层组件connect一次?**  
+如果是顶层组件connect一次，那么有个问题就是，每次更新公用组件的时候，整个页面都会刷新?....  
+这里没有把组件放在connect（可以参考[react-cnode](https://github.com/lzxb/react-cnode)），是分别再各个组件使用的。  
+
+9. **react中获取dom**
+
+    html中添加ref
+    ```html
+    <div className="box" ref="wrapper"></div>
+    ```
+    js中利用this.refs获取
+    ```js
+    const wrapper = this.refs.wrapper;
+    ```
+
+
 
 ## 参考链接
 [react-cnode](https://github.com/lzxb/react-cnode)

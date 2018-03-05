@@ -1,66 +1,51 @@
 import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import * as actions from '../../actions'
+import {withRouter} from 'react-router-dom'
 
 class LoadMore extends Component{
-    constructor(){
-        super();
-        this.state = {
-            page: 1
+    componentDidMount(){
+        const {isLoadingMore, LoadMoreFn} = this.props;
+        const loadMoreWrapper = this.refs.loadMoreWrapper;
+
+
+        //利用timeoutId实现节流
+        let timeoutId;
+        
+        function callback(){
+            const top = loadMoreWrapper.getBoundingClientRect().top;
+            const windowHeight = window.screen.height;
+            if(top && top < windowHeight){
+                // 当loadMoreWrapper已经滚动到暴露在可视区域之内时重新加载更多
+                LoadMoreFn();
+            }
         }
-    }
-    clickLoadMore(){
-        const {header_menus_redux, dispatch_getTopics} = this.props;
-        const activeHeaderMenus = header_menus_redux.find(menu => menu.isActive);
-        const activeTopicName = activeHeaderMenus.name;
-        const page = this.state.page + 1;
-        this.setState({
-            page: page
-        })
-        switch(activeTopicName){
-            case '全部':
-                dispatch_getTopics('', page)
-                break;
-            case '精华':
-                dispatch_getTopics('good', page)
-                break;
-            case '分享':
-                dispatch_getTopics('share', page)
-                break;
-            case '问答':
-                dispatch_getTopics('ask', page)
-                break;
-            case '招聘':
-                dispatch_getTopics('job', page)
-                break;
-            case '测试':
-                dispatch_getTopics('dev', page)
-                break;
-        }
+
+        window.addEventListener('scroll', function(){
+            //如果是”加载更多“则不做处理
+            if(isLoadingMore){
+                return;
+            }
+            if(timeoutId){
+                clearTimeout(timeoutId)
+            }
+            timeoutId = setTimeout(callback, 50)
+        }.bind(this), true)
+
     }
     render(){
-        
+        const {isLoadingMore, LoadMoreFn} = this.props;
         return (
-            <div className="load-more-container">
-                <a 
-                    onClick={() => this.clickLoadMore()}>
-                    LoadMore...
-               </a>
+            <div className="load-more-container" ref="loadMoreWrapper">
+                {
+                    isLoadingMore
+                    ? <span>加载中...</span>
+                    : <a 
+                        onClick={LoadMoreFn}>
+                        加载更多
+                      </a>
+                }
             </div>
         )
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        header_menus_redux: state.headerMenus
-    }
-}
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        dispatch_getTopics: (sort, page) => dispatch(actions.req_getTopics(sort, page))
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(LoadMore)
+export default withRouter(LoadMore)

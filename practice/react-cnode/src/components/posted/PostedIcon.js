@@ -30,7 +30,7 @@ class PostedIcon extends Component{
     }
     render(){
         const {updateTopic} = this.props;
-        console.log('updateTopic...', updateTopic)
+
         return (
             <span 
                 className="post-icon-wrapper"
