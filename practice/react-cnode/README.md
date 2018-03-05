@@ -34,7 +34,7 @@ https://github.com/brickspert/blog/issues/3
 
 9. **react中获取dom**
 
-    html中添加ref
+    html中添加ref
     ```html
     <div className="box" ref="wrapper"></div>
     ```
