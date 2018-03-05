@@ -1,11 +1,10 @@
 //common style
 @style-bg: #eee;
 @style-main : #80bd01;
-@style-color: #2c3e50;
 @white-color: #FFF;
 
 .white-color{
-    color:#FFF;
+    color:@white-color;
 }
 
 .clear{
@@ -27,6 +26,7 @@
         height: 100%;
     }
 }
+
 //加载更多
 .load-more-container{
     text-align:center;
@@ -35,8 +35,8 @@
 
 // 首页头部
 .index-menu-header {
-    color: #FFF;
-    background: #80bd01;
+    color: @white-color;
+    background: @style-main;
     font-size: 1.6rem;
     width: 100%;
    .cnode-nav{
@@ -52,7 +52,7 @@
                     border-right: 1px solid #618F00;
                 }
                 a{
-                    color:#FFF;
+                    color: @white-color;
                 }
                 .sel-nav {
                     background: #5e8a01;
@@ -70,8 +70,8 @@
 .common-cnode-header{
     width: 100%;
     font-size: 1.6rem;
-    color: #FFF;
-    background: #80bd01;
+    color: @white-color;
+    background: @style-main;
     display: flex;
     display: -webkit-flex;
     padding: 10px 10px;
@@ -85,8 +85,8 @@
 
 //公用底部
 .common-cnode-footer {
-    color: #FFF;
-    background: #80bd01;
+    color: @white-color;
+    background: @style-main;
     font-size: 1.6rem;
     width: 100%;
     .cnode-footer-sortlist {
@@ -110,7 +110,7 @@
                 font-size: 1.8rem;
             }
             a{
-                color:#FFF;
+                color: @white-color;
             }
             .unread-msg-hint{
                 background:red;
@@ -203,7 +203,7 @@
     .access-token-input{
         width:100%;
         border-radius: 5px;
-        border: 1px solid #eee;
+        border: 1px solid @style-bg;
         padding: 8px 10px;
         box-sizing:border-box;
         font-size: 1.2rem;
@@ -215,8 +215,8 @@
         line-height: 28px;
         border-radius: 5px;
         text-align: center;
-        color: #fff;
-        background: #80bd01;
+        color: @white-color;
+        background: @style-main;
         margin-top:30px;
         border:none;
         font-size: 1.4rem;
@@ -229,7 +229,7 @@
     text-align: center;
     font-size: 1.6rem;
     .signin-tip-link{
-        color: #80bd01;
+        color: @style-main;
     }
 }
 
@@ -245,7 +245,7 @@
         line-height: 28px;
         border-radius: 5px;
         text-align: center;
-        color: #fff;
+        color: @white-color;
         background: #e63e3e;
         margin-top:30px;
         border:none;
@@ -260,7 +260,7 @@
         width:100%;
         padding: 20px 0;
         background: #87c701;
-        color:#FFF;
+        color: @white-color;
         text-align: center;
         font-size:1.2rem;
         .user-avatar{
@@ -283,14 +283,14 @@
             display: -webkit-flex;
             font-size: 1.6rem;
             text-align: center;
-            background: #eee;
+            background: @style-bg;
             .uinfo-tab-option{
                 flex: 1;
                 padding:8px 0;
                 
             }
             .sel-uinfo-tab{
-                border-bottom: 3px solid #80bd01;
+                border-bottom: 3px solid @style-main;
             }
         }
         .topic-reply-list{
@@ -298,7 +298,7 @@
                 display:flex;
                 align-items:center;
                 padding: 8px 8px;
-                border-bottom: 1px solid #eee;
+                border-bottom: 1px solid @style-bg;
                 box-sizing:border-box;
                 .tr-reply-tit{
                     flex: 1;
@@ -315,7 +315,6 @@
     }
 }
 
-
 //消息
 .my-msg-list{
     width:100%;
@@ -323,7 +322,7 @@
         display: flex;
         display: -webkit-flex;
         padding: 10px;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid @style-bg;
         font-size:1.4rem;
         align-items: center;
         .msg-user-avatar{
@@ -348,7 +347,7 @@
                 margin-right: 4px;
             }
             .msg-reply-content{
-                color: #80bd01;
+                color: @style-main;
             }
         }
     }
@@ -363,7 +362,7 @@
     .post-content-list{
         .post-content-item{
             padding: 10px 10px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid @style-bg;
             color: #444;
             .post-content-input{
                 width:100%;
@@ -386,7 +385,7 @@
     .topic-detail-uinfo{
         display: flex;
         display: -webkit-flex;
-        border-bottom:1px solid #eee;
+        border-bottom:1px solid @style-bg;
         padding: 10px 6px;
         font-size: 1.3rem;
         color:#666;
@@ -400,7 +399,7 @@
                 margin-right: 6px;
             }
             .topic-detail-user{
-                color:#80bd01;
+                color:@style-main;
                 margin-right:6px;
             }
             .topic-read-num{
@@ -415,7 +414,7 @@
         .topic-articel-title{
             text-align:center;
             padding: 10px 8px;
-            background: #eee;
+            background: @style-bg;
         }
         .topic-articel-content{
             padding: 10px 10px;
@@ -429,8 +428,8 @@
 }
 .topic-reply-detail-content{
     .reply-num-box{
-        background: #eee;
-        border-left: 8px solid #80bd01;
+        background: @style-bg;
+        border-left: 8px solid @style-main;
         padding: 5px 10px;
         font-size: 1.4rem;
     }
@@ -453,7 +452,7 @@
                         margin-right: 6px;
                     }
                     .topic-detail-user{
-                        color:#80bd01;
+                        color:@style-main;
                         margin-right:6px;
                     }
                     .topic-read-num{
@@ -474,9 +473,9 @@
                     color: #969494;
                 }
                 & .ever-like-style{
-                    color:#80bd01;
+                    color:@style-main;
                     .like-num{
-                        color: #80bd01;
+                        color: @style-main;
                     }
                 }
                 .reply-topic-icon{
@@ -503,8 +502,8 @@
                 border-radius: 5px;
                 border: 1px solid #6fa401;
                 font-size: 14px;
-                color: #fff;
-                background: #80bd01;
+                color: @white-color;
+                background: @style-main;
                 margin-top: 10px;
             }
         }
@@ -513,7 +512,7 @@
 }
 
 //Loading动画
-.spinner {
+.loading-wrapper {
     margin: 20px auto;
     width: 20px;
     height: 20px;
@@ -523,7 +522,7 @@
   .container1 > div, .container2 > div, .container3 > div {
     width: 6px;
     height: 6px;
-    background-color: #80bd01;
+    background-color: @style-main;
    
     border-radius: 100%;
     position: absolute;
@@ -533,7 +532,7 @@
     animation-fill-mode: both;
   }
    
-  .spinner .spinner-container {
+  .loading-wrapper .loading-container {
     position: absolute;
     width: 100%;
     height: 100%;

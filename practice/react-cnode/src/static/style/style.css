@@ -193,7 +193,7 @@
   line-height: 28px;
   border-radius: 5px;
   text-align: center;
-  color: #fff;
+  color: #FFF;
   background: #80bd01;
   margin-top: 30px;
   border: none;
@@ -220,7 +220,7 @@
   line-height: 28px;
   border-radius: 5px;
   text-align: center;
-  color: #fff;
+  color: #FFF;
   background: #e63e3e;
   margin-top: 30px;
   border: none;
@@ -458,11 +458,11 @@
   border-radius: 5px;
   border: 1px solid #6fa401;
   font-size: 14px;
-  color: #fff;
+  color: #FFF;
   background: #80bd01;
   margin-top: 10px;
 }
-.spinner {
+.loading-wrapper {
   margin: 20px auto;
   width: 20px;
   height: 20px;
@@ -481,7 +481,7 @@
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-.spinner .spinner-container {
+.loading-wrapper .loading-container {
   position: absolute;
   width: 100%;
   height: 100%;
